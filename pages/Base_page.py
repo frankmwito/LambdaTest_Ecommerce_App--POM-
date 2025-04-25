@@ -78,4 +78,12 @@ class BasePage:
         """gets the title of the page."""
         return self.driver.title
         
+    # candidate elements
+    def click_right_menu_page(self, page_name):
+        """clicks on the right menu page."""
+        page = By.XPATH, "//aside[@id='column-right']//a[text()='" + page_name + "']"
+        # to make the xpath dynamic replace the text with the page name 
+        return self.click(page)
+        
+        
     
