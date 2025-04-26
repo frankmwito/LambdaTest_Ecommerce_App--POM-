@@ -15,8 +15,9 @@ class TestLogin(BaseTest):
         login_page.set_email_address(TestData.email)
         login_page.set_passwword(TestData.password)
         login_page.click_login_button()
+        title = "My Account"
         actual_title = login_page.get_title()
-        assert actual_title == "My Account", f"Expected title: My Account"
+        assert actual_title == "My Account", f"Expected title: {title}"
     
     def test_invalid_credentials(self):
         """Test case for invalid Login credentials."""
