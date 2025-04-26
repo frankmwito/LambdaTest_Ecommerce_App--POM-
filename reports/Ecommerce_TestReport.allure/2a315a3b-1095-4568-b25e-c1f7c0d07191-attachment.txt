@@ -1,0 +1,2 @@
+Setup: Opening the browser and navigating to the URL.
+Teardown: Closing the browser.
