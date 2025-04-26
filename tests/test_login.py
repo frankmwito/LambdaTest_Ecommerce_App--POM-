@@ -17,4 +17,12 @@ class TestLogin(BaseTest):
         login_page.click_login_button()
         actual_title = login_page.get_title()
         assert actual_title == "My Account", f"Expected title: My Account"
+    
+    def test_invalid_credentials(self):
+        """Test case for invalid Login credentials."""
+        login_page = LoginPage(self.driver)
+        login_page.log_into_application(
+            "Invalid_email", "Invalid_password")
+        actual_message = login_page.get_warning_message()
+        assert actual_message.__contains__("Warning")
         

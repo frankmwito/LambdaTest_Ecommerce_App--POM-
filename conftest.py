@@ -10,7 +10,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from utilities.test_data import TestData
 
-@pytest.fixture(params=["chrome", "firefox", "edge"], scope= "module")
+@pytest.fixture(params=["chrome", "firefox", "edge"], scope= "function")
 def driver_setup(request):
     if request.param == "chrome":
         service = ChromeService()
